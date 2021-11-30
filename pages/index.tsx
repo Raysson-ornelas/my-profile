@@ -6,7 +6,7 @@ import Nav from '../pages/components/navbar';
 import SocialProfileWithImage from '../pages/components/body';
 import ExperienceTimeLine from './components/experience';
 import SkillsUp from './components/skills';
-import { Grid, Heading } from '@chakra-ui/react';
+import { Grid, Heading, Center } from '@chakra-ui/react';
 
 const Home: NextPage = () => {
   return (
@@ -21,14 +21,25 @@ const Home: NextPage = () => {
       <Heading mt={10} textAlign="center">
         Experience
       </Heading>
-      <main className={styles.main}>
-        <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+      <Center py={5}>
+        <Grid
+          templateColumns={{
+            base: 'auto',
+            md: 'repeat(2,1fr)',
+            lg: 'repeat(4, 1fr)',
+          }}
+          w="90%"
+          gap={6}>
           <ExperienceTimeLine />
           <ExperienceTimeLine />
           <ExperienceTimeLine />
           <ExperienceTimeLine />
         </Grid>
-      </main>
+      </Center>
+      <Heading mt={5} textAlign="center">
+        Skills
+      </Heading>
+      <SkillsUp />
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

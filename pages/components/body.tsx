@@ -11,6 +11,7 @@ import {
   useColorModeValue,
   HStack,
   IconButton,
+  AspectRatio,
 } from '@chakra-ui/react';
 import { BsGithub, BsDiscord, BsPerson, BsLinkedin } from 'react-icons/bs';
 
@@ -25,15 +26,17 @@ export default function SocialProfileWithImage() {
         boxShadow={'2xl'}
         overflow={'hidden'}>
         <Image h={'400px'} w={'full'} src="/img/capa.jpg" objectFit={'cover'} />
-        <Flex justify={'center'} mt={-16}>
-          <Image
-            borderRadius="full"
-            boxSize="200px"
-            src="/img/eu.jpeg"
-            css={{
-              border: '2px solid white',
-            }}
-          />
+        <Flex justify={'center'} mt={-20}>
+          <AspectRatio width="12rem" height="14rem" ratio={1}>
+            <Image
+              borderRadius="full"
+              objectFit="cover"
+              src="/img/eu.jpeg"
+              css={{
+                border: '2px solid white',
+              }}
+            />
+          </AspectRatio>
         </Flex>
 
         <Box p={6}>
